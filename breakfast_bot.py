@@ -1,9 +1,8 @@
 import time
 
-def print_pause(list, delay):
-    for index in range(len(intro)):
-        print(intro[index])
-        time.sleep(delay)
+def print_pause(message):
+    print(message)
+    time.sleep(2)
 
 def order():
     while True:
@@ -21,11 +20,10 @@ def order():
             print("Sorry, I don't understand.")
             time.sleep(2)
 
-intro= ["Hello! I am Bob, the Breakfast Bot.",
-        "Today we have two breakfasts available.",
-        "The first is waffles with strawberries and whipped cream.",
-        "The second is sweet potato pancakes with butter and syrup."]
-print_pause(intro, 2)
+print_pause("Hello! I am Bob, the Breakfast Bot.")
+print_pause("Today we have two breakfasts available.")
+print_pause("The first is waffles with strawberries and whipped cream.")
+print_pause("The second is sweet potato pancakes with butter and syrup.")
 
 while True:
     order()

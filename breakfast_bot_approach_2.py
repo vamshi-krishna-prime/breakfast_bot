@@ -11,7 +11,7 @@ def compare(longstring, shortstring):
 
 def take_order():
     while True:
-        response= input("Plaese place your order. "
+        response= input("Please place your order. "
                         "Would you like waffles or pancakes?\n")
         if compare(response, "waffles") == True:
             result= ("waffles it is!\n"
@@ -25,6 +25,7 @@ def take_order():
             print("sorry, I don't understand")
 
 def another_order():
+    global loop_breaker
     while True:
         another_response= input("Would you like to place another order?"
               " Please say 'yes' or 'no'.\n")
@@ -33,20 +34,16 @@ def another_order():
             return another_result
         elif compare(another_response, "no") == True:
             another_result= ("OK, goodbye!")
-            loop_breaker="activate"
+            loop_breaker = "activate"
             return another_result
         else:
             print("sorry, I don't understand")
-            
+
 print("Hello! I am Bob, the Breakfast Bot.\n"
     "Today we have two breakfasts available.\n"
     "The first is waffles with strawberries and wipped cream.\n"
     "The second is sweet potato pancakes with butter and syrup.")
 loop_breaker = ""
-while True:
+while loop_breaker != "activate":
     print(take_order())
     print(another_order())
-    if loop_breaker == "activate":
-        break
-
-# code-imperfect, final loop runs forever

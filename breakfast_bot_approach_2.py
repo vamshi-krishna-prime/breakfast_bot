@@ -23,29 +23,30 @@ def take_order():
             return result
         else:
             print("sorry, I don't understand")
-            time.sleep(1)
 
-
-print("Hello! I am Bob, the Breakfast Bot.")
-time.sleep(1)
-print("Today we have two breakfasts available.")
-time.sleep(1)
-print("The first is waffles with strawberries and wipped cream.")
-time.sleep(1)
-print("The second is sweet potato pancakes with butter and syrup.")
-time.sleep(1)
+def another_order():
+    while True:
+        another_response= input("Would you like to place another order?"
+              " Please say 'yes' or 'no'.\n")
+        if compare(another_response, "yes") == True:
+            another_result= ("Very good, I'm happy to take another order.")
+            return another_result
+        elif compare(another_response, "no") == True:
+            another_result= ("OK, goodbye!")
+            loop_breaker="activate"
+            return another_result
+        else:
+            print("sorry, I don't understand")
+            
+print("Hello! I am Bob, the Breakfast Bot.\n"
+    "Today we have two breakfasts available.\n"
+    "The first is waffles with strawberries and wipped cream.\n"
+    "The second is sweet potato pancakes with butter and syrup.")
+loop_breaker = ""
 while True:
     print(take_order())
-    time.sleep(1)
-    another_response= input("Would you like to place another order?"
-          " Please say 'yes' or 'no'.\n")
-    if compare(another_response, "yes") == True:
-        print("Very good, I'm happy to take another order.")
-        time.sleep(1)
-    elif compare(another_response, "no") == True:
-        print("OK, goodbye!")
-        time.sleep(1)
+    print(another_order())
+    if loop_breaker == "activate":
         break
-    else:
-        print("sorry, I don't understand.")
-        time.sleep(1)
+
+# code-imperfect, final loop runs forever

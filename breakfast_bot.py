@@ -26,17 +26,19 @@ def get_order():
         print_pause("Waffles it is!")
     elif "pancakes" in response:
         print_pause("Pancakes it is!")
-
-Intro()
-while True:
-    get_order()
     print_pause("Your order will be ready shortly.")
 
+def order_again():
     order_again = valid_input("Would you like to place another order? "
                               "Please say 'yes' or 'no'.\n",
                               options)
     if "no" in order_again:
         print_pause("OK, goodbye!")
-        break
+#         break
     elif "yes" in order_again:
         print_pause("Very good, I'm happy to take another order.")
+        get_order()
+
+Intro()
+get_order()
+order_again()

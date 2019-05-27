@@ -12,7 +12,7 @@ def compare(longstring, shortstring):
 def take_order():
     while True:
         response= input("Plaese place your order. "
-                        "Would you like waffles or pancakes?")
+                        "Would you like waffles or pancakes?\n")
         if compare(response, "waffles") == True:
             result= ("waffles it is!\n"
                      "Your order will be ready shortly.")
@@ -23,20 +23,29 @@ def take_order():
             return result
         else:
             print("sorry, I don't understand")
+            time.sleep(1)
 
+
+print("Hello! I am Bob, the Breakfast Bot.")
 time.sleep(1)
-print("Hello! I am Bob, the Breakfast Bot.\n"
-    "Today we have two breakfasts available.\n"
-    "The first is waffles with strawberries and wipped cream.\n"
-    "The second is sweet potato pancakes with butter and syrup.")
+print("Today we have two breakfasts available.")
+time.sleep(1)
+print("The first is waffles with strawberries and wipped cream.")
+time.sleep(1)
+print("The second is sweet potato pancakes with butter and syrup.")
+time.sleep(1)
 while True:
     print(take_order())
+    time.sleep(1)
     another_response= input("Would you like to place another order?"
-          " Please say 'yes' or 'no'.")
+          " Please say 'yes' or 'no'.\n")
     if compare(another_response, "yes") == True:
         print("Very good, I'm happy to take another order.")
+        time.sleep(1)
     elif compare(another_response, "no") == True:
         print("OK, goodbye!")
+        time.sleep(1)
         break
     else:
-        print("sorry, I don't understand")
+        print("sorry, I don't understand.")
+        time.sleep(1)
